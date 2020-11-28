@@ -107,7 +107,8 @@
 
     - name: Install Open JDK
       yum:
-        name: java-1.{{ java_version.split('-')[1] }}.0-openjdk{{rh_install_type}}
+#        name: java-1.{{ java_version.split('-')[1] }}.0-openjdk{{rh_install_type}}
+        name: java-{{ java_version.split('-')[1] }}-openjdk{{rh_install_type}}
       become: true
 
     when: '(java_version != "default") and ("open" in java_version)'
