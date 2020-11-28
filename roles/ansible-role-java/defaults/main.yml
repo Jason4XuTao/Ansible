@@ -36,4 +36,5 @@ update_path: True
 
 # Debian Installations use update-alternatives to manage different version of JAVA
 # Set default Java Version
-set_ua_default: False
+#set_ua_default: False
+set_ua_default: True
