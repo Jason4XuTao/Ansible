@@ -133,7 +133,7 @@
 
   - name: List Matching Java Versions
 #    shell: 'update-alternatives --list java | grep -e "{{ jv_str }}"'
-    shell: 'alternatives --display java | grep -e "{{ jv_str }}" | grep priority | cut -d' ' -f1'
+    shell: 'alternatives --display java | grep -e "{{ jv_str }}" | grep priority | cut -d" " -f1'
     register: default_java_version
 
   - name: Set Default Java Version
