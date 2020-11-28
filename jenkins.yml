@@ -2,6 +2,9 @@
 - hosts: "{{ target | default('localhost') }}" 
   become: yes 
   roles: 
+    # Installs openjdk-8-jdk
+    - role: ansible-role-java
+      install_type: "jdk"
+      java_home: False
     - jenkins 
     - nodejs 
-    - ansible-java-8
