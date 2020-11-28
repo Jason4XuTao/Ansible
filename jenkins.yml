@@ -5,7 +5,7 @@
     # Installs openjdk-8-jdk
     - role: ansible-role-java
       install_type: "jdk"
-      java_version: "openjdk-8"
+      java_version: "openjdk-1.8.0"
       java_home: False
     - jenkins 
     - nodejs 

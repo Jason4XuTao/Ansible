@@ -128,10 +128,12 @@
 
   - name: Set Java Versions
     set_fact:
-      jv_str: "java-{{java_version.split('-')[1]}}-{{java_version.split('-')[0]}}"
+#      jv_str: "java-{{java_version.split('-')[1]}}-{{java_version.split('-')[0]}}"
+      jv_str: "jre-{{java_version.split('-')[1]}}-{{java_version.split('-')[0]}}"
 
   - name: List Matching Java Versions
-    shell: 'update-alternatives --list java | grep -e "{{ jv_str }}"'
+#    shell: 'update-alternatives --list java | grep -e "{{ jv_str }}"'
+    shell: 'alternatives --display java | grep -e "{{ jv_str }}" | grep priority | cut -d' ' -f1'
     register: default_java_version
 
   - name: Set Default Java Version
